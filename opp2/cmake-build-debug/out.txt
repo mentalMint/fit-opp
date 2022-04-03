@@ -1,3 +1,0 @@
-OpenMP. Time taken: 0.418 sec
-Measurement error: 0.0217606
-
