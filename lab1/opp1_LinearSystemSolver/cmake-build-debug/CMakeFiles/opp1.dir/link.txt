@@ -1,0 +1,3 @@
+"C:\Program Files\JetBrains\CLion 2020.2.1\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\opp1.dir/objects.a
+D:\1_Programming\mingw\mingw64\bin\ar.exe cr CMakeFiles\opp1.dir/objects.a @CMakeFiles\opp1.dir\objects1.rsp
+D:\1_Programming\mingw\mingw64\bin\x86_64-w64-mingw32-g++.exe -g -Wl,--whole-archive CMakeFiles\opp1.dir/objects.a -Wl,--no-whole-archive -o opp1.exe -Wl,--out-implib,libopp1.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\opp1.dir\linklibs.rsp

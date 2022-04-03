@@ -1,0 +1,68 @@
+The MPI test test_mpi for C in mode normal failed to compile with the following output:
+Change Dir: D:/1_Programming/C++/CLionProjects/opp1_LinearSystemSolverMPI1/cmake-build-release/CMakeFiles/CMakeTmp
+
+Run Build Command(s):D:/1_Programming/mingw/mingw64/bin/mingw32-make.exe -f Makefile cmTC_cd9b5/fast && D:/1_Programming/mingw/mingw64/bin/mingw32-make.exe  -f CMakeFiles\cmTC_cd9b5.dir\build.make CMakeFiles/cmTC_cd9b5.dir/build
+mingw32-make.exe[1]: Entering directory 'D:/1_Programming/C++/CLionProjects/opp1_LinearSystemSolverMPI1/cmake-build-release/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_cd9b5.dir/test_mpi.c.obj
+D:\1_Programming\mingw\mingw64\bin\x86_64-w64-mingw32-gcc.exe    -o CMakeFiles\cmTC_cd9b5.dir\test_mpi.c.obj -c D:\1_Programming\CMake\share\cmake-3.22\Modules\FindMPI\test_mpi.c
+D:\1_Programming\CMake\share\cmake-3.22\Modules\FindMPI\test_mpi.c:1:10: fatal error: mpi.h: No such file or directory
+ #include <mpi.h>
+          ^~~~~~~
+compilation terminated.
+mingw32-make.exe[1]: *** [CMakeFiles\cmTC_cd9b5.dir\build.make:77: CMakeFiles/cmTC_cd9b5.dir/test_mpi.c.obj] Error 1
+mingw32-make.exe[1]: Leaving directory 'D:/1_Programming/C++/CLionProjects/opp1_LinearSystemSolverMPI1/cmake-build-release/CMakeFiles/CMakeTmp'
+mingw32-make.exe: *** [Makefile:126: cmTC_cd9b5/fast] Error 2
+
+
+
+The MPI test test_mpi for CXX in mode normal failed to compile with the following output:
+Change Dir: D:/1_Programming/C++/CLionProjects/opp1_LinearSystemSolverMPI1/cmake-build-release/CMakeFiles/CMakeTmp
+
+Run Build Command(s):D:/1_Programming/mingw/mingw64/bin/mingw32-make.exe -f Makefile cmTC_b894a/fast && D:/1_Programming/mingw/mingw64/bin/mingw32-make.exe  -f CMakeFiles\cmTC_b894a.dir\build.make CMakeFiles/cmTC_b894a.dir/build
+mingw32-make.exe[1]: Entering directory 'D:/1_Programming/C++/CLionProjects/opp1_LinearSystemSolverMPI1/cmake-build-release/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_b894a.dir/test_mpi.cpp.obj
+D:\1_Programming\mingw\mingw64\bin\x86_64-w64-mingw32-g++.exe   -std=gnu++17 -o CMakeFiles\cmTC_b894a.dir\test_mpi.cpp.obj -c D:\1_Programming\C++\CLionProjects\opp1_LinearSystemSolverMPI1\cmake-build-release\CMakeFiles\FindMPI\test_mpi.cpp
+D:\1_Programming\C++\CLionProjects\opp1_LinearSystemSolverMPI1\cmake-build-release\CMakeFiles\FindMPI\test_mpi.cpp:1:10: fatal error: mpi.h: No such file or directory
+ #include <mpi.h>
+          ^~~~~~~
+compilation terminated.
+mingw32-make.exe[1]: *** [CMakeFiles\cmTC_b894a.dir\build.make:77: CMakeFiles/cmTC_b894a.dir/test_mpi.cpp.obj] Error 1
+mingw32-make.exe[1]: Leaving directory 'D:/1_Programming/C++/CLionProjects/opp1_LinearSystemSolverMPI1/cmake-build-release/CMakeFiles/CMakeTmp'
+mingw32-make.exe: *** [Makefile:126: cmTC_b894a/fast] Error 2
+
+
+
+The MPI test test_mpi for C in mode normal failed to compile with the following output:
+Change Dir: D:/1_Programming/C++/CLionProjects/opp1_LinearSystemSolverMPI1/cmake-build-release/CMakeFiles/CMakeTmp
+
+Run Build Command(s):D:/1_Programming/mingw/mingw64/bin/mingw32-make.exe -f Makefile cmTC_f8081/fast && D:/1_Programming/mingw/mingw64/bin/mingw32-make.exe  -f CMakeFiles\cmTC_f8081.dir\build.make CMakeFiles/cmTC_f8081.dir/build
+mingw32-make.exe[1]: Entering directory 'D:/1_Programming/C++/CLionProjects/opp1_LinearSystemSolverMPI1/cmake-build-release/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_f8081.dir/test_mpi.c.obj
+D:\1_Programming\mingw\mingw64\bin\x86_64-w64-mingw32-gcc.exe    -o CMakeFiles\cmTC_f8081.dir\test_mpi.c.obj -c D:\1_Programming\CMake\share\cmake-3.22\Modules\FindMPI\test_mpi.c
+D:\1_Programming\CMake\share\cmake-3.22\Modules\FindMPI\test_mpi.c:1:10: fatal error: mpi.h: No such file or directory
+ #include <mpi.h>
+          ^~~~~~~
+compilation terminated.
+mingw32-make.exe[1]: *** [CMakeFiles\cmTC_f8081.dir\build.make:77: CMakeFiles/cmTC_f8081.dir/test_mpi.c.obj] Error 1
+mingw32-make.exe[1]: Leaving directory 'D:/1_Programming/C++/CLionProjects/opp1_LinearSystemSolverMPI1/cmake-build-release/CMakeFiles/CMakeTmp'
+mingw32-make.exe: *** [Makefile:126: cmTC_f8081/fast] Error 2
+
+
+
+The MPI test test_mpi for CXX in mode normal failed to compile with the following output:
+Change Dir: D:/1_Programming/C++/CLionProjects/opp1_LinearSystemSolverMPI1/cmake-build-release/CMakeFiles/CMakeTmp
+
+Run Build Command(s):D:/1_Programming/mingw/mingw64/bin/mingw32-make.exe -f Makefile cmTC_aefac/fast && D:/1_Programming/mingw/mingw64/bin/mingw32-make.exe  -f CMakeFiles\cmTC_aefac.dir\build.make CMakeFiles/cmTC_aefac.dir/build
+mingw32-make.exe[1]: Entering directory 'D:/1_Programming/C++/CLionProjects/opp1_LinearSystemSolverMPI1/cmake-build-release/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_aefac.dir/test_mpi.cpp.obj
+D:\1_Programming\mingw\mingw64\bin\x86_64-w64-mingw32-g++.exe   -std=gnu++17 -o CMakeFiles\cmTC_aefac.dir\test_mpi.cpp.obj -c D:\1_Programming\C++\CLionProjects\opp1_LinearSystemSolverMPI1\cmake-build-release\CMakeFiles\FindMPI\test_mpi.cpp
+D:\1_Programming\C++\CLionProjects\opp1_LinearSystemSolverMPI1\cmake-build-release\CMakeFiles\FindMPI\test_mpi.cpp:1:10: fatal error: mpi.h: No such file or directory
+ #include <mpi.h>
+          ^~~~~~~
+compilation terminated.
+mingw32-make.exe[1]: *** [CMakeFiles\cmTC_aefac.dir\build.make:77: CMakeFiles/cmTC_aefac.dir/test_mpi.cpp.obj] Error 1
+mingw32-make.exe[1]: Leaving directory 'D:/1_Programming/C++/CLionProjects/opp1_LinearSystemSolverMPI1/cmake-build-release/CMakeFiles/CMakeTmp'
+mingw32-make.exe: *** [Makefile:126: cmTC_aefac/fast] Error 2
+
+
+
