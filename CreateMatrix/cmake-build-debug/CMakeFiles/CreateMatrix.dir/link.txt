@@ -1,0 +1,3 @@
+"C:\Program Files\JetBrains\CLion 2020.2.1\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\CreateMatrix.dir/objects.a
+D:\1_Programming\mingw\mingw64\bin\ar.exe cr CMakeFiles\CreateMatrix.dir/objects.a @CMakeFiles\CreateMatrix.dir\objects1.rsp
+D:\1_Programming\mingw\mingw64\bin\x86_64-w64-mingw32-g++.exe -g -Wl,--whole-archive CMakeFiles\CreateMatrix.dir/objects.a -Wl,--no-whole-archive -o CreateMatrix.exe -Wl,--out-implib,libCreateMatrix.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\CreateMatrix.dir\linklibs.rsp

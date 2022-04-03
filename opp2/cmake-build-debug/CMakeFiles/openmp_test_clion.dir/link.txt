@@ -1,0 +1,3 @@
+"C:\Program Files\JetBrains\CLion 2020.2.1\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\openmp_test_clion.dir/objects.a
+D:\1_Programming\mingw\mingw64\bin\ar.exe cr CMakeFiles\openmp_test_clion.dir/objects.a @CMakeFiles\openmp_test_clion.dir\objects1.rsp
+D:\1_Programming\mingw\mingw64\bin\x86_64-w64-mingw32-g++.exe -g -Wl,--whole-archive CMakeFiles\openmp_test_clion.dir/objects.a -Wl,--no-whole-archive -o openmp_test_clion.exe -Wl,--out-implib,libopenmp_test_clion.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\openmp_test_clion.dir\linklibs.rsp
