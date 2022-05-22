@@ -1,0 +1,4 @@
+Time taken: 5.31e-05
+Time taken: 6.1e-06
+Time taken: 0.0001114
+Time taken: 0.0002939

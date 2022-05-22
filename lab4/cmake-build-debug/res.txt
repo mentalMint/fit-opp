@@ -1,0 +1,10 @@
+Time taken: 0.0004971
+Time taken: 0.0023753
+Time taken: 0.0010731
+Time taken: 0.0010926
+Time taken: 0.002515
+Time taken: 0.004617
+Time taken: 0.867701
+Time taken: 0.0552822
+Time taken: 0.0888674
+Time taken: 0.348186
