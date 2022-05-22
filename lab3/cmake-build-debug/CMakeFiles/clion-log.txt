@@ -1,4 +1,4 @@
-"C:\Program Files\JetBrains\CLion 2020.2.1\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -DCMAKE_C_COMPILER=D:/1_Programming/mingw/mingw64/bin/x86_64-w64-mingw32-gcc.exe -DCMAKE_CXX_COMPILER=D:/1_Programming/mingw/mingw64/bin/x86_64-w64-mingw32-g++.exe -G "CodeBlocks - MinGW Makefiles" D:\1_Programming\C++\CLionProjects\OPP\lab3
+"D:\1_Programming\CLion\CLion 2021.3.4\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -DCMAKE_C_COMPILER=D:/1_Programming/mingw/mingw64/bin/x86_64-w64-mingw32-gcc.exe -DCMAKE_CXX_COMPILER=D:/1_Programming/mingw/mingw64/bin/x86_64-w64-mingw32-g++.exe -G "CodeBlocks - MinGW Makefiles" D:\1_Programming\C++\CLionProjects\OPP\lab3
 -- The C compiler identification is GNU 8.1.0
 -- The CXX compiler identification is GNU 8.1.0
 -- Detecting C compiler ABI info
@@ -11,6 +11,9 @@
 -- Check for working CXX compiler: D:/1_Programming/mingw/mingw64/bin/x86_64-w64-mingw32-g++.exe - skipped
 -- Detecting CXX compile features
 -- Detecting CXX compile features - done
+-- Found MPI_C: C:/Program Files (x86)/Microsoft SDKs/MPI/Lib/x64/msmpi.lib (found version "2.0") 
+-- Found MPI_CXX: C:/Program Files (x86)/Microsoft SDKs/MPI/Lib/x64/msmpi.lib (found version "2.0") 
+-- Found MPI: TRUE (found version "2.0")  
 -- Configuring done
 -- Generating done
 -- Build files have been written to: D:/1_Programming/C++/CLionProjects/OPP/lab3/cmake-build-debug

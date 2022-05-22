@@ -8,18 +8,18 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="D:/1_Programming/C++/CLionProjects/opp1_LinearSystemSolverMPI1/cmake-build-debug"/>
+				<Option working_dir="D:/1_Programming/C++/CLionProjects/OPP/lab1/opp1_LinearSystemSolverMPI1/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="D:/1_Programming/mingw/mingw64/bin/mingw32-make.exe -f &quot;D:/1_Programming/C++/CLionProjects/opp1_LinearSystemSolverMPI1/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="D:/1_Programming/mingw/mingw64/bin/mingw32-make.exe -f &quot;D:/1_Programming/C++/CLionProjects/opp1_LinearSystemSolverMPI1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="D:/1_Programming/mingw/mingw64/bin/mingw32-make.exe -f &quot;D:/1_Programming/C++/CLionProjects/opp1_LinearSystemSolverMPI1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="D:/1_Programming/mingw/mingw64/bin/mingw32-make.exe -f &quot;D:/1_Programming/C++/CLionProjects/opp1_LinearSystemSolverMPI1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="D:/1_Programming/mingw/mingw64/bin/mingw32-make.exe -f &quot;D:/1_Programming/C++/CLionProjects/OPP/lab1/opp1_LinearSystemSolverMPI1/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="D:/1_Programming/mingw/mingw64/bin/mingw32-make.exe -f &quot;D:/1_Programming/C++/CLionProjects/OPP/lab1/opp1_LinearSystemSolverMPI1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/1_Programming/mingw/mingw64/bin/mingw32-make.exe -f &quot;D:/1_Programming/C++/CLionProjects/OPP/lab1/opp1_LinearSystemSolverMPI1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/1_Programming/mingw/mingw64/bin/mingw32-make.exe -f &quot;D:/1_Programming/C++/CLionProjects/OPP/lab1/opp1_LinearSystemSolverMPI1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="opp1_LinearSystemSolverMPI1">
-				<Option output="D:/1_Programming/C++/CLionProjects/opp1_LinearSystemSolverMPI1/cmake-build-debug/opp1_LinearSystemSolverMPI1.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="D:/1_Programming/C++/CLionProjects/opp1_LinearSystemSolverMPI1/cmake-build-debug"/>
+				<Option output="D:/1_Programming/C++/CLionProjects/OPP/lab1/opp1_LinearSystemSolverMPI1/cmake-build-debug/opp1_LinearSystemSolverMPI1.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/1_Programming/C++/CLionProjects/OPP/lab1/opp1_LinearSystemSolverMPI1/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -32,15 +32,15 @@
 					<Add directory="D:/1_Programming/mingw/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="D:/1_Programming/mingw/mingw64/bin/mingw32-make.exe -f &quot;D:/1_Programming/C++/CLionProjects/opp1_LinearSystemSolverMPI1/cmake-build-debug/Makefile&quot;  VERBOSE=1 opp1_LinearSystemSolverMPI1"/>
-					<CompileFile command="D:/1_Programming/mingw/mingw64/bin/mingw32-make.exe -f &quot;D:/1_Programming/C++/CLionProjects/opp1_LinearSystemSolverMPI1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="D:/1_Programming/mingw/mingw64/bin/mingw32-make.exe -f &quot;D:/1_Programming/C++/CLionProjects/opp1_LinearSystemSolverMPI1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="D:/1_Programming/mingw/mingw64/bin/mingw32-make.exe -f &quot;D:/1_Programming/C++/CLionProjects/opp1_LinearSystemSolverMPI1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="D:/1_Programming/mingw/mingw64/bin/mingw32-make.exe -f &quot;D:/1_Programming/C++/CLionProjects/OPP/lab1/opp1_LinearSystemSolverMPI1/cmake-build-debug/Makefile&quot;  VERBOSE=1 opp1_LinearSystemSolverMPI1"/>
+					<CompileFile command="D:/1_Programming/mingw/mingw64/bin/mingw32-make.exe -f &quot;D:/1_Programming/C++/CLionProjects/OPP/lab1/opp1_LinearSystemSolverMPI1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/1_Programming/mingw/mingw64/bin/mingw32-make.exe -f &quot;D:/1_Programming/C++/CLionProjects/OPP/lab1/opp1_LinearSystemSolverMPI1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/1_Programming/mingw/mingw64/bin/mingw32-make.exe -f &quot;D:/1_Programming/C++/CLionProjects/OPP/lab1/opp1_LinearSystemSolverMPI1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="opp1_LinearSystemSolverMPI1/fast">
-				<Option output="D:/1_Programming/C++/CLionProjects/opp1_LinearSystemSolverMPI1/cmake-build-debug/opp1_LinearSystemSolverMPI1.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="D:/1_Programming/C++/CLionProjects/opp1_LinearSystemSolverMPI1/cmake-build-debug"/>
+				<Option output="D:/1_Programming/C++/CLionProjects/OPP/lab1/opp1_LinearSystemSolverMPI1/cmake-build-debug/opp1_LinearSystemSolverMPI1.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/1_Programming/C++/CLionProjects/OPP/lab1/opp1_LinearSystemSolverMPI1/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -53,37 +53,37 @@
 					<Add directory="D:/1_Programming/mingw/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="D:/1_Programming/mingw/mingw64/bin/mingw32-make.exe -f &quot;D:/1_Programming/C++/CLionProjects/opp1_LinearSystemSolverMPI1/cmake-build-debug/Makefile&quot;  VERBOSE=1 opp1_LinearSystemSolverMPI1/fast"/>
-					<CompileFile command="D:/1_Programming/mingw/mingw64/bin/mingw32-make.exe -f &quot;D:/1_Programming/C++/CLionProjects/opp1_LinearSystemSolverMPI1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="D:/1_Programming/mingw/mingw64/bin/mingw32-make.exe -f &quot;D:/1_Programming/C++/CLionProjects/opp1_LinearSystemSolverMPI1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="D:/1_Programming/mingw/mingw64/bin/mingw32-make.exe -f &quot;D:/1_Programming/C++/CLionProjects/opp1_LinearSystemSolverMPI1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="D:/1_Programming/mingw/mingw64/bin/mingw32-make.exe -f &quot;D:/1_Programming/C++/CLionProjects/OPP/lab1/opp1_LinearSystemSolverMPI1/cmake-build-debug/Makefile&quot;  VERBOSE=1 opp1_LinearSystemSolverMPI1/fast"/>
+					<CompileFile command="D:/1_Programming/mingw/mingw64/bin/mingw32-make.exe -f &quot;D:/1_Programming/C++/CLionProjects/OPP/lab1/opp1_LinearSystemSolverMPI1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/1_Programming/mingw/mingw64/bin/mingw32-make.exe -f &quot;D:/1_Programming/C++/CLionProjects/OPP/lab1/opp1_LinearSystemSolverMPI1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/1_Programming/mingw/mingw64/bin/mingw32-make.exe -f &quot;D:/1_Programming/C++/CLionProjects/OPP/lab1/opp1_LinearSystemSolverMPI1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="D:/1_Programming/C++/CLionProjects/opp1_LinearSystemSolverMPI1/cmake-build-debug"/>
+				<Option working_dir="D:/1_Programming/C++/CLionProjects/OPP/lab1/opp1_LinearSystemSolverMPI1/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="D:/1_Programming/mingw/mingw64/bin/mingw32-make.exe -f &quot;D:/1_Programming/C++/CLionProjects/opp1_LinearSystemSolverMPI1/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="D:/1_Programming/mingw/mingw64/bin/mingw32-make.exe -f &quot;D:/1_Programming/C++/CLionProjects/opp1_LinearSystemSolverMPI1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="D:/1_Programming/mingw/mingw64/bin/mingw32-make.exe -f &quot;D:/1_Programming/C++/CLionProjects/opp1_LinearSystemSolverMPI1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="D:/1_Programming/mingw/mingw64/bin/mingw32-make.exe -f &quot;D:/1_Programming/C++/CLionProjects/opp1_LinearSystemSolverMPI1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="D:/1_Programming/mingw/mingw64/bin/mingw32-make.exe -f &quot;D:/1_Programming/C++/CLionProjects/OPP/lab1/opp1_LinearSystemSolverMPI1/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="D:/1_Programming/mingw/mingw64/bin/mingw32-make.exe -f &quot;D:/1_Programming/C++/CLionProjects/OPP/lab1/opp1_LinearSystemSolverMPI1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/1_Programming/mingw/mingw64/bin/mingw32-make.exe -f &quot;D:/1_Programming/C++/CLionProjects/OPP/lab1/opp1_LinearSystemSolverMPI1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/1_Programming/mingw/mingw64/bin/mingw32-make.exe -f &quot;D:/1_Programming/C++/CLionProjects/OPP/lab1/opp1_LinearSystemSolverMPI1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="D:/1_Programming/C++/CLionProjects/opp1_LinearSystemSolverMPI1/cmake-build-debug"/>
+				<Option working_dir="D:/1_Programming/C++/CLionProjects/OPP/lab1/opp1_LinearSystemSolverMPI1/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="D:/1_Programming/mingw/mingw64/bin/mingw32-make.exe -f &quot;D:/1_Programming/C++/CLionProjects/opp1_LinearSystemSolverMPI1/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="D:/1_Programming/mingw/mingw64/bin/mingw32-make.exe -f &quot;D:/1_Programming/C++/CLionProjects/opp1_LinearSystemSolverMPI1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="D:/1_Programming/mingw/mingw64/bin/mingw32-make.exe -f &quot;D:/1_Programming/C++/CLionProjects/opp1_LinearSystemSolverMPI1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="D:/1_Programming/mingw/mingw64/bin/mingw32-make.exe -f &quot;D:/1_Programming/C++/CLionProjects/opp1_LinearSystemSolverMPI1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="D:/1_Programming/mingw/mingw64/bin/mingw32-make.exe -f &quot;D:/1_Programming/C++/CLionProjects/OPP/lab1/opp1_LinearSystemSolverMPI1/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="D:/1_Programming/mingw/mingw64/bin/mingw32-make.exe -f &quot;D:/1_Programming/C++/CLionProjects/OPP/lab1/opp1_LinearSystemSolverMPI1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/1_Programming/mingw/mingw64/bin/mingw32-make.exe -f &quot;D:/1_Programming/C++/CLionProjects/OPP/lab1/opp1_LinearSystemSolverMPI1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/1_Programming/mingw/mingw64/bin/mingw32-make.exe -f &quot;D:/1_Programming/C++/CLionProjects/OPP/lab1/opp1_LinearSystemSolverMPI1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="D:/1_Programming/C++/CLionProjects/opp1_LinearSystemSolverMPI1/main.cpp">
+		<Unit filename="D:/1_Programming/C++/CLionProjects/OPP/lab1/opp1_LinearSystemSolverMPI1/main.cpp">
 			<Option target="opp1_LinearSystemSolverMPI1"/>
 		</Unit>
-		<Unit filename="D:/1_Programming/C++/CLionProjects/opp1_LinearSystemSolverMPI1/CMakeLists.txt">
+		<Unit filename="D:/1_Programming/C++/CLionProjects/OPP/lab1/opp1_LinearSystemSolverMPI1/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>
