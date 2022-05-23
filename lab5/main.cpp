@@ -7,7 +7,7 @@
 #include <valarray>
 #include "Task.h"
 
-#define TASKS_NUMBER 1000
+#define TASKS_NUMBER size * 1000
 
 using namespace std;
 
@@ -18,30 +18,27 @@ void printArray(const int* x, int N) {
     cerr << std::endl;
 }
 
-void fillZeroArray(double* x, int N) {
-    memset(x, 0, sizeof(double) * N);
+void fillZeroArray(int* x, int N) {
+    memset(x, 0, sizeof(int) * N);
 }
 
 void createTaskList(Task* taskList, int iterCounter, int rank, int size) {
     for (int i = 0; i < TASKS_NUMBER; i++) {
-        taskList[i].setRepeatNum(abs(50 - i % 100) * abs(rank - (iterCounter % size)) * 1);
+        taskList[i].setRepeatNum(abs(50 - i % 100) * abs(rank - (iterCounter % size)) * 1000);
     }
 }
 
 typedef struct Data {
-    Task* taskList = new Task[TASKS_NUMBER];
-    MPI_Request* requests;
+    Task* taskList;
     pthread_mutex_t mutex;
+    pthread_mutex_t reduceMutex;
+    pthread_cond_t cond;
+    int mutexCounter;
     int rank;
     int size;
-    int iterNumber = 1;
-    int left = TASKS_NUMBER;
+    int iterNumber;
+    int currentTask;
 } Data;
-
-pthread_mutex_t reduceMutex;
-int counter = 1;
-MPI_Request* allgatherRequests;
-pthread_cond_t cond;
 
 void* threadWork(void* argument) {
     Data* data = (struct Data*) argument;
@@ -50,94 +47,128 @@ void* threadWork(void* argument) {
     int size = data->size;
     double globalSum = 0;
     double result = 0;
+    int tasksToSendNumber = (TASKS_NUMBER / size) / 4;
+    int* newTasks = new int[TASKS_NUMBER / 4];
+    int* nullTasks = new int[tasksToSendNumber];
     
     for (int iterCounter = 0; iterCounter < data->iterNumber; iterCounter++) {
-        data->left = TASKS_NUMBER;
         createTaskList(data->taskList, iterCounter, rank, size);
+        data->currentTask = 0;
         start = MPI_Wtime();
         double sum = 0;
-        for (int i = 0; i < TASKS_NUMBER; i++) {
-            sum += sin(data->taskList[i].perform());
+        
+        for (int i = 0; i < TASKS_NUMBER;) {
             pthread_mutex_lock(&data->mutex);
-            data->left--;
+            data->currentTask++;
+            i = data->currentTask;
+            sum += sin(data->taskList[i].perform());
             pthread_mutex_unlock(&data->mutex);
         }
-        MPI_Ibcast(NULL, 0, MPI_C_BOOL, rank, MPI_COMM_WORLD, &data->requests[rank]);
-        MPI_Wait(&data->requests[rank], MPI_STATUS_IGNORE);
-        int lefts[size];
+        
+        MPI_Request sendReqs[size - 1];
+        for (int i = 0; i < size; i++) {
+            if (i < rank) {
+                MPI_Isend(NULL, 0, MPI_C_BOOL, i, rank, MPI_COMM_WORLD, &sendReqs[i]);
+            } else if (i > rank) {
+                MPI_Isend(NULL, 0, MPI_C_BOOL, i, rank, MPI_COMM_WORLD, &sendReqs[i - 1]);
+            }
+        }
+        MPI_Waitall(size - 1, sendReqs, MPI_STATUSES_IGNORE);
+        
+        fillZeroArray(nullTasks, tasksToSendNumber);
+        MPI_Gather(nullTasks, tasksToSendNumber, MPI_INT, newTasks, tasksToSendNumber, MPI_INT, rank, MPI_COMM_WORLD);
+        
+        for (int i = 0; i < TASKS_NUMBER / 4; i++) {
+            pthread_mutex_lock(&data->mutex);
+            data->taskList[i].setRepeatNum(newTasks[i]);
+            sum += sin(data->taskList[i].perform());
+            pthread_mutex_unlock(&data->mutex);
+        }
+        end = MPI_Wtime();
     
-//        pthread_mutex_lock(&data->mutex);
-        MPI_Iallgather(&data->left, 1, MPI_INT, lefts, 1, MPI_INT, MPI_COMM_WORLD, &allgatherRequests[rank]);
-//        pthread_mutex_unlock(&data->mutex);
-        MPI_Wait(&allgatherRequests[rank], MPI_STATUS_IGNORE);
-//        cerr << rank << " ";
-//        printArray(lefts, size);
-        if (0 != pthread_mutex_lock(&reduceMutex)) {
+        if (0 != pthread_mutex_lock(&data->reduceMutex)) {
             perror("");
+            MPI_Finalize();
             abort();
         }
-        if (counter != 0) {
-            int stat = pthread_cond_wait(&cond,&reduceMutex);
-            if (0 != stat) {
-                cerr << stat << endl;
+        if (data->mutexCounter < iterCounter) {
+            int ret = pthread_cond_wait(&data->cond, &data->reduceMutex);
+            if (0 != ret) {
+                cerr << ret << endl;
+                MPI_Finalize();
                 abort();
             }
         }
-        pthread_mutex_unlock(&reduceMutex);
-        if (rank == 1) {
-            cerr << "ass " << rank << endl;
+        if (0 != pthread_mutex_unlock(&data->reduceMutex)) {
+            perror("");
+            MPI_Finalize();
+            abort();
         }
-        end = MPI_Wtime();
-//        cerr << "Rank " << rank << ", iteration " << iterCounter << ", time taken " << end - start << endl;
+        
         MPI_Reduce(&sum, &globalSum, 1, MPI_DOUBLE, MPI_SUM, 0, MPI_COMM_WORLD);
         if (rank == 0) {
             result += globalSum;
+//            cerr << result << endl;
+        }
+        for (int i = 0; i < size; i++) {
+            MPI_Barrier(MPI_COMM_WORLD);
+            if (i == rank) {
+
+                ofstream res("res.txt", std::ios_base::app);
+                if (i == 0) {
+                    cout << "Iteration " << iterCounter << endl;
+                    res << "Iteration " << iterCounter << endl;
+                }
+                cout << "Rank " << rank << ". Time taken: " << end - start << endl;
+                res << "Rank " << rank << ". Time taken: " << end - start << endl;
+                res.close();
+            }
         }
     }
+    delete[] newTasks;
+    delete[] nullTasks;
 }
 
 void* receive(void* argument) {
     Data* data = (struct Data*) argument;
     int rank = data->rank;
     int size = data->size;
-    int lefts[size];
     MPI_Request requests[size - 1];
-
-    for (int i = 0; i < size; i++) {
-        if (rank != i) {
-            MPI_Ibcast(NULL, 0, MPI_C_BOOL, i, MPI_COMM_WORLD, &data->requests[i]);
+    int tasksToSendNumber = (TASKS_NUMBER / size) / 4;
+    int* tasksToSend = new int[tasksToSendNumber];
+    
+    for (int j = 0; j < data->iterNumber; j++) {
+        for (int i = 0; i < size; i++) {
+            if (i < rank) {
+                MPI_Irecv(NULL, 0, MPI_C_BOOL, i, i, MPI_COMM_WORLD, &requests[i]);
+            } else if (i > rank) {
+                MPI_Irecv(NULL, 0, MPI_C_BOOL, i, i, MPI_COMM_WORLD, &requests[i - 1]);
+            }
         }
-    }
-    
-    for (int i = 0; i < size - 1; i++) {
-        if (i < rank) {
-            requests[i] = data->requests[i];
-        } else {
-            requests[i] = data->requests[i + 1];
+        
+        for (int i = 0; i < size - 1; i++) {
+            int index;
+            MPI_Status status;
+            MPI_Waitany(size - 1, requests, &index, &status);
+            
+            fillZeroArray(tasksToSend, tasksToSendNumber);
+            pthread_mutex_lock(&data->mutex);
+            int limit = (TASKS_NUMBER - data->currentTask) / 3;
+            for (int j = 0; j < tasksToSendNumber && j < limit; j++) {
+                data->currentTask++;
+                tasksToSend[j] = data->taskList[j + data->currentTask].getRepeatNum();
+            }
+            pthread_mutex_unlock(&data->mutex);
+            
+            MPI_Gather(tasksToSend, tasksToSendNumber, MPI_INT, NULL, tasksToSendNumber, MPI_INT, status.MPI_TAG,
+                       MPI_COMM_WORLD);
         }
+        pthread_mutex_lock(&data->reduceMutex);
+        data->mutexCounter++;
+        pthread_cond_signal(&data->cond);
+        pthread_mutex_unlock(&data->reduceMutex);
     }
-    
-    for (int i = 0; i < size - 1; i++) {
-        int index;
-        MPI_Status status;
-        MPI_Waitany(size - 1, requests, &index, &status);
-        
-//        pthread_mutex_lock(&data->mutex);
-        MPI_Iallgather(&data->left, 1, MPI_INT, lefts, 1, MPI_INT, MPI_COMM_WORLD, &allgatherRequests[status.MPI_SOURCE]);
-//        pthread_mutex_unlock(&data->mutex);
-        
-        MPI_Wait(&allgatherRequests[status.MPI_SOURCE], MPI_STATUS_IGNORE);
-
-//        if (rank == 0) {
-//            cerr << rank << " ";
-//            printArray(lefts, size);
-//        }
-    }
-    
-//    pthread_mutex_lock(&reduceMutex);
-//    counter = 0;
-//    pthread_cond_signal(&cond);
-//    pthread_mutex_unlock(&reduceMutex);
+    delete[] tasksToSend;
 }
 
 void run(int rank, int size) {
@@ -149,55 +180,76 @@ void run(int rank, int size) {
     data->taskList = new Task[TASKS_NUMBER];
     data->rank = rank;
     data->size = size;
-    data->requests = new MPI_Request[size];
-    allgatherRequests = new MPI_Request[size];
+    data->mutexCounter = 0;
+    data->currentTask = -1;
+    data->iterNumber = 4;
     pthread_mutexattr_t mutexattr;
     if (0 != pthread_attr_init(&attrs)) {
         perror("Cannot initialize attributes");
+        MPI_Finalize();
         abort();
     }
     if (0 != pthread_attr_setdetachstate(&attrs, PTHREAD_CREATE_JOINABLE)) {
         perror("Error in setting attributes");
+        MPI_Finalize();
         abort();
     }
     
     if (0 != pthread_mutexattr_init(&mutexattr)) {
         perror("Cannot initialize mutex attributes");
+        MPI_Finalize();
         abort();
     }
-    if (0 != pthread_mutex_init(&reduceMutex, &mutexattr)) {
+    if (0 != pthread_mutex_init(&data->reduceMutex, &mutexattr)) {
         perror("Cannot initialize mutex");
+        MPI_Finalize();
         abort();
     }
     if (0 != pthread_mutex_init(&data->mutex, &mutexattr)) {
         perror("Cannot initialize mutex");
+        MPI_Finalize();
+        abort();
+    }
+    
+    pthread_condattr_t condattr;
+    if (0 != pthread_condattr_init(&condattr)) {
+        perror("Cannot initialize mutex");
+        MPI_Finalize();
+        abort();
+    }
+    if (0 != pthread_cond_init(&data->cond, &condattr)) {
+        perror("Cannot initialize mutex");
+        MPI_Finalize();
         abort();
     }
     
     if (0 != pthread_create(&worker, &attrs, threadWork, data)) {
         perror("Cannot create a thread");
+        MPI_Finalize();
         abort();
     }
     if (0 != pthread_create(&receiver, &attrs, receive, data)) {
         perror("Cannot create a thread");
+        MPI_Finalize();
         abort();
     }
     
     pthread_attr_destroy(&attrs);
     threads[0] = &worker;
     threads[1] = &receiver;
-    for (auto &thread: threads) {
-        if (0 != pthread_join(*thread, NULL)) {
+    for (int i = 0; i < 2; i++) {
+        if (0 != pthread_join(*threads[i], NULL)) {
             perror("Cannot join a thread");
             abort();
         }
     }
-//    delete[] data->taskList;
+    delete[] data->taskList;
     delete data;
 }
 
 int main(int argc, char** argv) {
-    MPI_Init(&argc, &argv);
+    int provided;
+    MPI_Init_thread(&argc, &argv, MPI_THREAD_MULTIPLE, &provided);
     
     int size, rank;
     MPI_Comm_size(MPI_COMM_WORLD, &size);

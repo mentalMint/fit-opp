@@ -8,8 +8,8 @@
 
 class Task {
 private:
-    int repeatNum = 0;
-
+    int repeatNum;
+    
 public:
     Task(int repeatNum) : repeatNum(repeatNum) {
     }

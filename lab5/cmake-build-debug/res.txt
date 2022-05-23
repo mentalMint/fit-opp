@@ -2,3 +2,156 @@ Time taken: 5.31e-05
 Time taken: 6.1e-06
 Time taken: 0.0001114
 Time taken: 0.0002939
+Iteration 0
+Rank 0. Time taken: 0.0238893
+Rank 1. Time taken: 0.118986
+Iteration 1
+Rank 0. Time taken: 0.129413
+Rank 1. Time taken: 0.0320652
+Iteration 2
+Rank 0. Time taken: 0.0001891
+Rank 1. Time taken: 0.185373
+Iteration 0
+Rank 0. Time taken: 0.0281793
+Rank 1. Time taken: 0.127151
+Iteration 1
+Rank 0. Time taken: 0.126194
+Rank 1. Time taken: 0.0542422
+Iteration 2
+Rank 0. Time taken: 0.109199
+Rank 1. Time taken: 0.17808
+Iteration 0
+Rank 0. Time taken: 0.12525
+Rank 1. Time taken: 0.622739
+Rank 2. Time taken: 0.775548
+Rank 3. Time taken: 0.775956
+Iteration 1
+Rank 0. Time taken: 0.51824
+Rank 1. Time taken: 0.159922
+Rank 2. Time taken: 0.527575
+Rank 3. Time taken: 0.539416
+Iteration 2
+Rank 0. Time taken: 0.548259
+Rank 1. Time taken: 0.52777
+Rank 2. Time taken: 0.0500354
+Rank 3. Time taken: 0.545065
+Iteration 0
+Rank 0. Time taken: 0.139981
+Rank 1. Time taken: 0.6047
+Rank 2. Time taken: 0.677179
+Rank 3. Time taken: 0.727968
+Iteration 1
+Rank 0. Time taken: 0.527148
+Rank 1. Time taken: 0.3393
+Rank 2. Time taken: 0.52709
+Rank 3. Time taken: 0.526877
+Iteration 2
+Rank 0. Time taken: 0.562948
+Rank 1. Time taken: 0.562721
+Rank 2. Time taken: 0.57892
+Rank 3. Time taken: 0.562697
+Iteration 0
+Rank 0. Time taken: 0.161349
+Rank 1. Time taken: 0.607691
+Rank 2. Time taken: 0.666799
+Rank 3. Time taken: 0.792975
+Iteration 1
+Rank 0. Time taken: 0.540388
+Rank 1. Time taken: 0.34457
+Rank 2. Time taken: 0.504436
+Rank 3. Time taken: 0.575344
+Iteration 2
+Rank 0. Time taken: 0.457188
+Rank 1. Time taken: 0.383083
+Rank 2. Time taken: 0.177332
+Rank 3. Time taken: 0.359737
+Iteration 0
+Rank 0. Time taken: 0.183898
+Rank 1. Time taken: 0.519527
+Rank 2. Time taken: 0.719397
+Rank 3. Time taken: 0.719649
+Iteration 1
+Rank 0. Time taken: 0.548695
+Rank 1. Time taken: 0.117231
+Rank 2. Time taken: 0.548687
+Rank 3. Time taken: 0.548399
+Iteration 2
+Rank 0. Time taken: 0.564644
+Rank 1. Time taken: 0.564434
+Rank 2. Time taken: 0.585305
+Rank 3. Time taken: 0.564462
+Iteration 0
+Rank 0. Time taken: 0.358184
+Rank 1. Time taken: 0.732648
+Rank 2. Time taken: 0.739375
+Rank 3. Time taken: 0.7932
+Iteration 1
+Rank 0. Time taken: 0.587026
+Rank 1. Time taken: 0.297028
+Rank 2. Time taken: 0.558506
+Rank 3. Time taken: 0.609123
+Iteration 2
+Rank 0. Time taken: 0.428695
+Rank 1. Time taken: 0.419148
+Rank 2. Time taken: 0.149338
+Rank 3. Time taken: 0.375839
+Iteration 0
+Rank 0. Time taken: 0.281932
+Rank 1. Time taken: 0.587863
+Rank 2. Time taken: 0.834228
+Rank 3. Time taken: 1.10861
+Iteration 1
+Rank 0. Time taken: 0.411078
+Rank 1. Time taken: 0.089933
+Rank 2. Time taken: 0.411681
+Rank 3. Time taken: 0.644073
+Iteration 2
+Rank 0. Time taken: 0.652836
+Rank 1. Time taken: 0.497791
+Rank 2. Time taken: 0.0454115
+Rank 3. Time taken: 0.507856
+Iteration 3
+Rank 0. Time taken: 0.893379
+Rank 1. Time taken: 0.767136
+Rank 2. Time taken: 0.780656
+Rank 3. Time taken: 0.196126
+Iteration 0
+Rank 0. Time taken: 0.154204
+Rank 1. Time taken: 1.00696
+Rank 2. Time taken: 0.966462
+Rank 3. Time taken: 0.966628
+Iteration 1
+Rank 0. Time taken: 0.439271
+Rank 1. Time taken: 0.151968
+Rank 2. Time taken: 0.438747
+Rank 3. Time taken: 0.592305
+Iteration 2
+Rank 0. Time taken: 0.600208
+Rank 1. Time taken: 0.583057
+Rank 2. Time taken: 0.142828
+Rank 3. Time taken: 0.570987
+Iteration 3
+Rank 0. Time taken: 0.890495
+Rank 1. Time taken: 0.835028
+Rank 2. Time taken: 0.59783
+Rank 3. Time taken: 0.101604
+Iteration 0
+Rank 0. Time taken: 0.190012
+Rank 1. Time taken: 0.852469
+Rank 2. Time taken: 0.863277
+Rank 3. Time taken: 1.10009
+Iteration 1
+Rank 0. Time taken: 0.637272
+Rank 1. Time taken: 0.0856026
+Rank 2. Time taken: 0.643452
+Rank 3. Time taken: 0.648725
+Iteration 2
+Rank 0. Time taken: 0.611385
+Rank 1. Time taken: 0.40674
+Rank 2. Time taken: 0.170556
+Rank 3. Time taken: 0.449173
+Iteration 3
+Rank 0. Time taken: 0.896338
+Rank 1. Time taken: 0.896349
+Rank 2. Time taken: 0.792459
+Rank 3. Time taken: 0.373616
