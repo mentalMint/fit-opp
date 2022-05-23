@@ -40,7 +40,7 @@ typedef struct Data {
     int currentTask;
 } Data;
 
-void* threadWork(void* argument) {
+void threadWork(void* argument) {
     Data* data = (struct Data*) argument;
     double start, end;
     int rank = data->rank;
@@ -54,8 +54,8 @@ void* threadWork(void* argument) {
     for (int iterCounter = 0; iterCounter < data->iterNumber; iterCounter++) {
         createTaskList(data->taskList, iterCounter, rank, size);
         data->currentTask = 0;
-        start = MPI_Wtime();
         double sum = 0;
+        start = MPI_Wtime();
         
         for (int i = 0; i < TASKS_NUMBER;) {
             pthread_mutex_lock(&data->mutex);
@@ -172,9 +172,9 @@ void* receive(void* argument) {
 }
 
 void run(int rank, int size) {
-    pthread_t worker;
+//    pthread_t worker;
     pthread_t receiver;
-    pthread_t* threads[2];
+//    pthread_t* threads[2];
     pthread_attr_t attrs;
     Data* data = new Data;
     data->taskList = new Task[TASKS_NUMBER];
@@ -223,26 +223,40 @@ void run(int rank, int size) {
         abort();
     }
     
-    if (0 != pthread_create(&worker, &attrs, threadWork, data)) {
-        perror("Cannot create a thread");
-        MPI_Finalize();
-        abort();
-    }
+//    if (0 != pthread_create(&worker, &attrs, threadWork, data)) {
+//        perror("Cannot create a thread");
+//        MPI_Finalize();
+//        abort();
+//    }
     if (0 != pthread_create(&receiver, &attrs, receive, data)) {
         perror("Cannot create a thread");
         MPI_Finalize();
         abort();
     }
     
+    threadWork(data);
+    
+    pthread_mutexattr_destroy(&mutexattr);
+    pthread_cond_destroy(&data->cond);
     pthread_attr_destroy(&attrs);
-    threads[0] = &worker;
-    threads[1] = &receiver;
-    for (int i = 0; i < 2; i++) {
-        if (0 != pthread_join(*threads[i], NULL)) {
-            perror("Cannot join a thread");
-            abort();
-        }
+    pthread_mutex_destroy(&data->mutex);
+    pthread_mutex_destroy(&data->reduceMutex);
+    
+//    threads[0] = &worker;
+//    threads[1] = &receiver;
+//    for (int i = 1; i < 2; i++) {
+//        if (0 != pthread_join(*threads[i], NULL)) {
+//            perror("Cannot join a thread");
+//            MPI_Finalize();
+//            abort();
+//        }
+//    }
+    if (0 != pthread_join(receiver, NULL)) {
+        perror("Cannot join a thread");
+        MPI_Finalize();
+        abort();
     }
+    
     delete[] data->taskList;
     delete data;
 }

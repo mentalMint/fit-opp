@@ -155,3 +155,43 @@ Rank 0. Time taken: 0.896338
 Rank 1. Time taken: 0.896349
 Rank 2. Time taken: 0.792459
 Rank 3. Time taken: 0.373616
+Iteration 0
+Rank 0. Time taken: 0.229367
+Rank 1. Time taken: 0.760939
+Rank 2. Time taken: 1.07651
+Rank 3. Time taken: 1.2077
+Iteration 1
+Rank 0. Time taken: 0.457257
+Rank 1. Time taken: 0.155506
+Rank 2. Time taken: 0.457405
+Rank 3. Time taken: 0.614448
+Iteration 2
+Rank 0. Time taken: 0.827735
+Rank 1. Time taken: 0.671538
+Rank 2. Time taken: 0.147681
+Rank 3. Time taken: 0.587698
+Iteration 3
+Rank 0. Time taken: 1.055
+Rank 1. Time taken: 0.974774
+Rank 2. Time taken: 0.693525
+Rank 3. Time taken: 0.20171
+Iteration 0
+Rank 0. Time taken: 0.195652
+Rank 1. Time taken: 0.676006
+Rank 2. Time taken: 0.79747
+Rank 3. Time taken: 1.09113
+Iteration 1
+Rank 0. Time taken: 0.69053
+Rank 1. Time taken: 0.183151
+Rank 2. Time taken: 0.682907
+Rank 3. Time taken: 0.803605
+Iteration 2
+Rank 0. Time taken: 0.608983
+Rank 1. Time taken: 0.52957
+Rank 2. Time taken: 0.0564623
+Rank 3. Time taken: 0.558035
+Iteration 3
+Rank 0. Time taken: 0.904442
+Rank 1. Time taken: 0.904174
+Rank 2. Time taken: 0.760665
+Rank 3. Time taken: 0.294033
